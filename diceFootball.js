@@ -24,9 +24,6 @@ let playerTwoDiceTwenty = Math.floor(Math.random() * 20) + 1;
 let playerOne = (playerOneDiceFour + playerOneDiceSix + playerOneDiceEight + playerOneDiceTen + playerOneDiceTwelve + playerOneDiceTwenty);
 let playerTwo = (playerTwoDiceFour + playerTwoDiceSix + playerTwoDiceEight + playerTwoDiceTen + playerTwoDiceTwelve + playerTwoDiceTwenty);
 
-let numberOfPossesion = 3;
-let counter = 0;
-
 
 if(playerOne > playerTwo){
 console.log("Pass Complete");
