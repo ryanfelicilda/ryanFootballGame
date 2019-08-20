@@ -24,31 +24,76 @@ function rollAllSixDice() {
 	return totalRoll;
 }
 // Call function.
-let playerOne = rollAllSixDice();
-let playerTwo = rollAllSixDice();
+let playerOneRoll = rollAllSixDice();
+let playerTwoRoll = rollAllSixDice();
+// console.log(playerOneRoll, playerTwoRoll);
 
-console.log(playerOne,playerTwo)
 
-let continueIteration = true;
+// Run game function.
 
-while(continueIteration) {
+function runGame(){
+	let continueIteration = true;
+	let downNumber = 1;
+	let yardLine = 0;
+	while(continueIteration && downNumber < 5) {
 
-	let playerOne = rollAllSixDice();
-	let playerTwo = rollAllSixDice();
-
-	if(playerOne > playerTwo){
-		console.log("Pass Complete");
-		continueIteration = false;
-	}
-	else if(playerOne < playerTwo){
-		console.log("Pass Incomplete");
-		continueIteration = false;
-	}
-	else if(playerOne == playerTwo){
-		console.log("Interception!!!");
-		continueIteration = false;
-	}
+		playerOne = rollAllSixDice();
+		playerTwo = rollAllSixDice();
+		console.log(playerOne, playerTwo);
+		if(playerOne > playerTwo){
+			console.log("Pass Complete");
+			yardLine += playerOne;
+			console.log("You are now at the " + yardLine +" yard line!")
+			continueIteration = true;
+				if(yardLine > 110){
+				console.log("Out of bounds")
+				continueIteration = false;
+				}
+				if(yardLine >= 100 && yardLine <= 110){
+				console.log("Touchdown!!!")
+				continueIteration = false;
+				}
+		}
+		else if(playerOne < playerTwo){
+			console.log("Pass Incomplete");
+			continueIteration = false;
+		}
+		else if(playerOne == playerTwo){
+			console.log("Interception!!!");
+			continueIteration = false;
+		}
+		downNumber++;
+	}	
 }
+
+runGame();
+console.log();
+
+
+
+
+
+
+
+// let continueIteration = true;
+
+// while(continueIteration) {
+
+// 	let playerOne = rollAllSixDice();
+// 	let playerTwo = rollAllSixDice();
+
+// 	if(playerOne > playerTwo){
+// 		console.log("Pass Complete");
+// 		continueIteration = false;
+// 	}
+// 	else if(playerOne == playerTwo){
+// 		console.log("Interception!!!");
+// 		continueIteration = false;
+// 	}
+// }
+
+
+
 
 
 
