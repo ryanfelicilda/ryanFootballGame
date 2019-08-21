@@ -1,29 +1,5 @@
 let gameWelcome = alert("Welcome to Four Down Dice Football! The object of the game is to score a touchdown in 4 downs. If you dont. You LOSE!");
 
-// Coin toss.
-
-function coinToss(){
-	let userChoice = prompt("Do you choose HEADS or TAILS?").toUpperCase();
-	let coinFlip = Math.floor(Math.random() * 2) + 1;
-		if(userChoice == "HEADS"){
-			if(coinFlip == 1){
-				let result = alert ("Heads. You win! You receive the ball.");
-			}
-			else{
-				let result = alert ("Tails. You lose! Player 2 receive the ball.");
-			}
-		}
-		else{
-			if(coinFlip == 2){
-				let result = alert ("Heads. You lose! Player 2 receive the ball.");
-			}
-			else{
-				let result = alert ("Tails. You win! You receive the ball.");
-			}
-		}
-	return coinFlip;
-}
-
 // Single dice roll.
 
 function rollSingleDice(numberOfSides){
@@ -48,7 +24,6 @@ function rollAllSixDice(){
 
 function runGame(){
 
-	coinToss();
 	let continueIteration = true;
 	let downNumber = 1;
 	let yardLine = 0;
