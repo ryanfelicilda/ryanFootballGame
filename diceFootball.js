@@ -1,23 +1,39 @@
+let gameWelcome = alert("Welcome to Four Down Dice Football! The object of the game is to score a touchdown in 4 downs. If you dont. You LOSE!");
 
 // Coin toss.
 
-let coinFlip = Math.floor(Math.random() * 2) == 0 ? 'Heads' : 'Tails';
-console.log(coinFlip);
-
-// if(Heads){
-
-// }
+function coinToss(){
+	let userChoice = prompt("Do you choose HEADS or TAILS?").toUpperCase();
+	let coinFlip = Math.floor(Math.random() * 2) + 1;
+		if(userChoice == "HEADS"){
+			if(coinFlip == 1){
+				let result = alert ("Heads. You win! You receive the ball.");
+			}
+			else{
+				let result = alert ("Tails. You lose! Player 2 receive the ball.");
+			}
+		}
+		else{
+			if(coinFlip == 2){
+				let result = alert ("Heads. You lose! Player 2 receive the ball.");
+			}
+			else{
+				let result = alert ("Tails. You win! You receive the ball.");
+			}
+		}
+	return coinFlip;
+}
 
 // Single dice roll.
 
-function rollSingleDice(numberOfSides) {
+function rollSingleDice(numberOfSides){
 	let roll = Math.floor(Math.random() * numberOfSides) + 1;
 	return roll;
 }
 
 // Six dice roll.
 
-function rollAllSixDice() {
+function rollAllSixDice(){
 	let rollFour = rollSingleDice(4);
 	let rollSix = rollSingleDice(6);
 	let rollEight = rollSingleDice(8);
@@ -27,13 +43,12 @@ function rollAllSixDice() {
 	let totalRoll = rollFour + rollSix + rollEight + rollTen + rollTwelve + rollTwenty;
 	return totalRoll;
 }
-// Call function.
-let playerOneRoll = rollAllSixDice();
-let playerTwoRoll = rollAllSixDice();
 
 // Run game function.
 
 function runGame(){
+
+	coinToss();
 	let continueIteration = true;
 	let downNumber = 1;
 	let yardLine = 0;
@@ -46,15 +61,12 @@ function runGame(){
 			yardLine += playerOne;
 			console.log("You are now at the " + yardLine +" yard line!")
 			continueIteration = true;
-			// if(playerOne > playerTwo && downNumber >= 4 && yardLine > 110){
-			// 	console.log("Outbounds! Turnover!")
-			// }
-			if(yardLine > 110){
+			if(yardLine > 110 && downNumber <= 4){
 				console.log("Out of bounds!");
-				continueIteration = false;
+				continueIteration = true;
 			}
 			if(yardLine > 110 && downNumber >= 4){
-				console.log("Turnover!");
+				console.log("Turnover. You LOSE!");
 				continueIteration = false;
 			}
 			if(yardLine >= 100 && yardLine <= 110){
@@ -62,7 +74,7 @@ function runGame(){
 				continueIteration = false;
 			}
 			if(playerOne > playerTwo && yardLine < 100 && downNumber >= 4){
-				console.log("Turnover!");
+				console.log("Turnover. You LOSE!");
 				continueIteration = true;
 			}
 			if(playerOne > playerTwo && yardLine < 100 && downNumber == 3){
@@ -75,7 +87,7 @@ function runGame(){
 			}
 		}
 		else if(playerOne < playerTwo && downNumber >= 4){
-			console.log("Pass Incomplete. Turnover!");
+			console.log("Pass Incomplete. Turnover. You LOSE!");
 			continueIteration = false;
 		}
 		else if(playerOne < playerTwo){
