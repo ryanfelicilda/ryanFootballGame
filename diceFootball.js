@@ -31,7 +31,9 @@ function runGame(){
 		playerTwo = rollAllSixDice();
 		console.log(playerOne, playerTwo);
 		if(playerOne > playerTwo){
-			console.log("Pass Complete!");
+			let passComplete = ["Pass Complete.", "Amazing catch!", "Almost dropped that one.", "Good catch.", "Right on the money."]
+			let randomCompleteMessage = passComplete[Math.floor(Math.random() * passComplete.length)];
+			console.log(randomCompleteMessage);
 			yardLine += playerOne;
 			console.log("You are now at the " + yardLine +" yard line!")
 			continueIteration = true;
