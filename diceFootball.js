@@ -23,7 +23,6 @@ function rollAllSixDice(){
 // Run game function.
 
 function runGame(){
-
 	let continueIteration = true;
 	let downNumber = 1;
 	let yardLine = 0;
@@ -66,7 +65,9 @@ function runGame(){
 			continueIteration = false;
 		}
 		else if(playerOne < playerTwo){
-				console.log("Pass Incomplete!");
+				let incompletePassMessages = ["Pass Incomplete!", "Pass over thrown.", "Pass deflected.", "That pass was almost intercepted.", "He had to get rid of that one.", "Bad snap on that one.", "Dropped pass."];
+				let randomMessages = incompletePassMessages[Math.floor(Math.random() * incompletePassMessages.length)];
+				console.log(randomMessages);
 				continueIteration = true;
 			}
 		else if(playerOne == playerTwo){

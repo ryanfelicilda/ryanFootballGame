@@ -1,0 +1,31 @@
+Gameplay:
+
+Dice Sides: 4, 6, 8, 10, 12, 20
+
+Game Starts
+
+P1 vs Computer
+
+Game starts:
+-Choose how many dice to roll.
+-Ex. Player chooses 6 different dice to roll. (4, 6, 8, 10, 12, 20)
+-Rolls and gets 60 (max number)
+-Player can move 60 yards
+-If defense rolls higher, pass incomplete.
+-If defense rolls less, pass complete. 3 tries left to score touchdown.
+-If defense rolls same/equal, pass intercepted. Turnover.
+-Player rolls again and gets 40-50.
+-Touchdown.
+-Player rolls again and gets 51.
+-Pass incomplete because it is over 110 yards.
+-Player must land on 100 to 110 yards for touchdown.
+
+
+User Stories:
+
+-As a player, I want to play against the computer.
+-As a player, I want to roll all 6 dice to determine yard made.
+-As a player, I only get four tries to make it to the endzone.
+-As a player, the ball must get within the 100-110 yard line to score a touchdown or it’s a turnover.
+-As a player, I want a defense that can cause an interception.
+-As a player, I want a defense that can cause an incomplete pass.
